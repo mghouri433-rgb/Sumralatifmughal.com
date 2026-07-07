@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumra Latif Mughal — Treasury &amp; Digital Banking Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070f;
+    --bg-panel:#0b1024;
+    --bg-elevated:#111834;
+    --bg-elevated-2:#141d40;
+    --border:rgba(255,255,255,0.08);
+    --border-strong:rgba(255,255,255,0.16);
+    --text:#f2f4fb;
+    --text-muted:#93a0c2;
+    --text-faint:#5b6688;
+    --blue:#3e7bfa;
+    --blue-soft:#6d97ff;
+    --purple:#8b5cf6;
+    --gold:#d9b877;
+    --green:#22d3a5;
+    --red:#fb7185;
+    --gradient:linear-gradient(135deg,#3e7bfa 0%, #8b5cf6 100%);
+    --gradient-soft:linear-gradient(135deg, rgba(62,123,250,0.16), rgba(139,92,246,0.16));
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+    --maxw:1240px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  ::selection{ background: rgba(139,92,246,0.35); color:#fff; }
+
+  a{ color:inherit; text-decoration:none; }
+  ul{list-style:none;}
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+
+  /* ---------- Ambient background ---------- */
+  .bg-mesh{
+    position:fixed; inset:0; z-index:-2; overflow:hidden;
+    background:
+      radial-gradient(1100px 600px at 12% -10%, rgba(62,123,250,0.16), transparent 60%),
+      radial-gradient(900px 700px at 90% 10%, rgba(139,92,246,0.14), transparent 60%),
+      radial-gradient(1000px 800px at 50% 110%, rgba(62,123,250,0.10), transparent 60%),
+      var(--bg);
+  }
+  .bg-grid{
+    position:fixed; inset:0; z-index:-1; opacity:0.35; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image: radial-gradient(1200px 700px at 50% 0%, black, transparent 75%);
+  }
+
+  /* ---------- Glass utility ---------- */
+  .glass{
+    background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border:1px solid var(--border);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-radius:var(--radius-lg);
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(5,7,15,0.72);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{
+    width:38px; height:38px; border-radius:10px;
+    background:var(--gradient);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-weight:700; font-size:14px; color:#0a0d1a;
+    letter-spacing:-0.5px;
+  }
+  .brand-name{ font-family:var(--font-display); font-weight:600; font-size:15.5px; letter-spacing:0.2px; }
+  .brand-name span{ display:block; font-family:var(--font-body); font-weight:400; font-size:11px; color:var(--text-muted); letter-spacing:0.6px; text-transform:uppercase; margin-top:2px;}
+
+  nav.links{ display:flex; align-items:center; gap:36px; }
+  nav.links a{
+    font-size:14px; color:var(--text-muted); font-weight:500; position:relative; padding:4px 0;
+    transition:color .25s ease;
+  }
+  nav.links a:hover{ color:var(--text); }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; height:1px; width:0%;
+    background:var(--gradient); transition:width .3s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:100px; font-size:13.5px; font-weight:600;
+    border:1px solid var(--border-strong); cursor:pointer; white-space:nowrap;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+    font-family:var(--font-body);
+  }
+  .btn-primary{
+    background:var(--gradient); color:#050710; border:none;
+    box-shadow:0 8px 24px -8px rgba(62,123,250,0.55);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(139,92,246,0.6); }
+  .btn-ghost{ background:rgba(255,255,255,0.02); color:var(--text); }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.3); }
+  .nav-cta{ display:flex; align-items:center; gap:12px; }
+
+  .burger{ display:none; }
+
+  /* ---------- Ticker ---------- */
+  .ticker-bar{
+    position:fixed; top:70px; left:0; right:0; z-index:99;
+    background:rgba(11,16,36,0.85); border-bottom:1px solid var(--border);
+    overflow:hidden; padding:9px 0;
+    backdrop-filter:blur(10px);
+  }
+  .ticker-track{
+    display:flex; gap:52px; width:max-content;
+    animation: ticker-scroll 34s linear infinite;
+    font-family:var(--font-mono); font-size:12.5px; color:var(--text-muted);
+  }
+  .ticker-track span.item{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+  .ticker-track b{ color:var(--text); font-weight:500; }
+  .up{ color:var(--green); } .down{ color:var(--red); }
+  @keyframes ticker-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; padding:210px 0 120px;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--blue-soft); margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 12px var(--green); }
+
+  h1.headline{
+    font-family:var(--font-display); font-weight:600; letter-spacing:-1.5px;
+    font-size:clamp(38px, 4.6vw, 62px); line-height:1.06; margin-bottom:26px;
+  }
+  h1.headline .grad{
+    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sub{
+    font-size:17px; color:var(--text-muted); max-width:520px; margin-bottom:38px; font-weight:400;
+  }
+  .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:52px; }
+
+  .hero-stats{ display:flex; gap:38px; flex-wrap:wrap; }
+  .hstat b{ font-family:var(--font-display); font-size:26px; display:block; }
+  .hstat span{ font-size:12.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.6px; }
+
+  /* Dashboard panel */
+  .dash{
+    padding:26px; position:relative;
+  }
+  .dash-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;}
+  .dash-title{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--text-faint);}
+  .dash-dot{ display:flex; gap:6px; }
+  .dash-dot i{ width:7px; height:7px; border-radius:50%; background:var(--border-strong); display:block;}
+  .dash-dot i:first-child{ background:var(--green); }
+
+  .gauge-row{ display:flex; gap:18px; margin-bottom:18px; }
+  .gauge-card{
+    flex:1; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:var(--radius-md);
+    padding:16px; text-align:center;
+  }
+  .gauge-card .glabel{ font-size:10.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.8px; font-family:var(--font-mono); margin-top:8px;}
+  .gauge-card .gval{ font-family:var(--font-display); font-size:19px; margin-top:4px; }
+
+  .chart-card{
+    background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:var(--radius-md);
+    padding:16px 18px 12px;
+  }
+  .chart-card .clabel{ display:flex; justify-content:space-between; font-size:11px; color:var(--text-faint); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:6px;}
+  .chart-card .cval{ color:var(--green); }
+
+  .note-illustrative{ font-size:10.5px; color:var(--text-faint); text-align:center; margin-top:14px; font-style:italic; }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:120px 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--purple); margin-bottom:14px; display:block;
+  }
+  h2.section-title{
+    font-family:var(--font-display); font-weight:600; font-size:clamp(28px,3.4vw,40px); letter-spacing:-1px; margin-bottom:16px;
+  }
+  .section-desc{ color:var(--text-muted); font-size:15.5px; max-width:560px; }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:260px 1fr 1fr; gap:44px; align-items:start; }
+
+  .about-photo{ position:sticky; top:130px; }
+  .photo-frame{
+    position:relative; padding:10px; overflow:hidden;
+  }
+  .photo-frame::before{
+    content:''; position:absolute; inset:0; border-radius:var(--radius-lg);
+    padding:1px; background:var(--gradient);
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude;
+    opacity:0.6; pointer-events:none;
+  }
+  .photo-frame img{
+    width:100%; display:block; border-radius:14px;
+    filter:saturate(1.03) contrast(1.02);
+  }
+  .photo-caption{
+    margin-top:14px; text-align:center;
+  }
+  .photo-caption b{ display:block; font-family:var(--font-display); font-size:15px; font-weight:600; }
+  .photo-caption span{ font-size:11.5px; color:var(--text-faint); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.5px; }
+  .about-copy p{ color:var(--text-muted); margin-bottom:18px; font-size:15.5px; }
+  .about-copy strong{ color:var(--text); font-weight:600; }
+
+  .stat-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .stat-card{
+    padding:22px; transition:transform .3s ease, border-color .3s ease;
+  }
+  .stat-card:hover{ transform:translateY(-4px); border-color:var(--border-strong); }
+  .stat-card svg{ width:24px; height:24px; margin-bottom:14px; stroke:var(--blue-soft); }
+  .stat-card b{ display:block; font-family:var(--font-display); font-size:15px; margin-bottom:6px; }
+  .stat-card p{ font-size:12.5px; color:var(--text-faint); }
+
+  .company-strip{ display:flex; flex-wrap:wrap; gap:12px; margin-top:36px; }
+  .company-chip{
+    padding:9px 16px; border-radius:100px; font-size:12.5px; color:var(--text-muted);
+    border:1px solid var(--border); font-family:var(--font-mono);
+  }
+
+  /* ---------- Experience Timeline ---------- */
+  .timeline{ position:relative; padding-left:52px; }
+  .timeline::before{
+    content:''; position:absolute; left:14px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(180deg, rgba(139,92,246,0.15), var(--blue), var(--purple));
+    border-radius:2px;
+  }
+  .tl-item{ position:relative; margin-bottom:44px; }
+  .tl-item:last-child{ margin-bottom:0; }
+  .tl-node{
+    position:absolute; left:-52px; top:28px; width:14px; height:14px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--blue-soft);
+    box-shadow:0 0 0 5px rgba(62,123,250,0.12);
+  }
+  .tl-item.current .tl-node{ background:var(--gradient); border-color:transparent; box-shadow:0 0 0 6px rgba(139,92,246,0.22), 0 0 18px rgba(139,92,246,0.6); }
+
+  .tl-card{ padding:28px 30px; }
+  .tl-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:18px; flex-wrap:wrap; margin-bottom:14px;}
+  .tl-role{ font-family:var(--font-display); font-size:19px; font-weight:600; letter-spacing:-0.2px; }
+  .tl-org{ color:var(--blue-soft); font-size:13.5px; font-weight:500; margin-top:4px; }
+  .tl-dates{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);
+    border:1px solid var(--border); padding:6px 12px; border-radius:100px; white-space:nowrap;
+  }
+  .tl-body{ color:var(--text-muted); font-size:14.5px; margin-bottom:16px; }
+  .tl-list{ display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; margin-bottom:18px;}
+  .tl-list li{ font-size:13.5px; color:var(--text-muted); position:relative; padding-left:16px; }
+  .tl-list li::before{ content:''; position:absolute; left:0; top:8px; width:5px; height:5px; border-radius:50%; background:var(--purple); }
+
+  .seniority{ display:flex; align-items:center; gap:10px; }
+  .seniority-label{ font-family:var(--font-mono); font-size:10.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.6px; width:96px;}
+  .seniority-track{ flex:1; height:5px; border-radius:4px; background:rgba(255,255,255,0.06); overflow:hidden; max-width:220px;}
+  .seniority-fill{ height:100%; border-radius:4px; background:var(--gradient); }
+
+  /* ---------- Expertise ---------- */
+  .exp-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .exp-card{
+    padding:26px 22px; transition:transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .exp-card:hover{ transform:translateY(-5px); border-color:rgba(139,92,246,0.4); background:linear-gradient(180deg, rgba(139,92,246,0.08), rgba(255,255,255,0.02)); }
+  .exp-icon{
+    width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center;
+    background:var(--gradient-soft); border:1px solid var(--border); margin-bottom:16px;
+  }
+  .exp-icon svg{ width:19px; height:19px; stroke:var(--blue-soft); fill:none; }
+  .exp-card h3{ font-family:var(--font-display); font-size:15px; font-weight:600; margin-bottom:6px; }
+  .exp-card p{ font-size:12.5px; color:var(--text-faint); }
+  .exp-tag{ font-family:var(--font-mono); font-size:9.5px; color:var(--purple); text-transform:uppercase; letter-spacing:0.6px; display:block; margin-bottom:10px;}
+
+  /* ---------- Credentials ---------- */
+  .cred-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; }
+  .cred-list{ display:flex; flex-direction:column; gap:14px; }
+  .cred-card{
+    display:flex; align-items:center; gap:16px; padding:18px 20px;
+  }
+  .cred-badge{
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:linear-gradient(135deg, rgba(217,184,119,0.25), rgba(217,184,119,0.05));
+    border:1px solid rgba(217,184,119,0.35);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cred-badge svg{ width:20px; height:20px; stroke:var(--gold); fill:none; }
+  .cred-card h4{ font-size:14px; font-weight:600; margin-bottom:3px; }
+  .cred-card p{ font-size:12px; color:var(--text-faint); }
+
+  .edu-card{ padding:22px 24px; margin-bottom:14px; }
+  .edu-card:last-child{ margin-bottom:0; }
+  .edu-degree{ font-family:var(--font-display); font-size:15.5px; font-weight:600; margin-bottom:4px;}
+  .edu-school{ color:var(--blue-soft); font-size:13px; margin-bottom:2px; }
+  .edu-focus{ font-size:12px; color:var(--text-faint); }
+
+  /* ---------- Awards ---------- */
+  .award-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .award-card{ padding:28px 20px; text-align:center; }
+  .award-card svg{ width:30px; height:30px; stroke:var(--gold); fill:none; margin-bottom:14px; }
+  .award-card h4{ font-family:var(--font-display); font-size:14px; font-weight:600; margin-bottom:6px;}
+  .award-card p{ font-size:11.5px; color:var(--text-faint); }
+
+  /* ---------- Philosophy ---------- */
+  .philosophy{
+    padding:64px 60px; text-align:center; position:relative; overflow:hidden;
+  }
+  .philosophy::before{
+    content:'“'; position:absolute; top:-10px; left:24px; font-family:var(--font-display); font-size:140px;
+    color:rgba(139,92,246,0.15); line-height:1;
+  }
+  .philosophy blockquote{
+    font-family:var(--font-display); font-size:clamp(19px,2.4vw,26px); font-weight:500; line-height:1.5;
+    max-width:820px; margin:0 auto 20px; letter-spacing:-0.3px;
+  }
+  .philosophy cite{ font-style:normal; color:var(--text-faint); font-size:13px; font-family:var(--font-mono); }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; }
+  .contact-card{ padding:36px; }
+  .contact-card h3{ font-family:var(--font-display); font-size:20px; margin-bottom:10px; }
+  .contact-card p{ color:var(--text-muted); font-size:14px; margin-bottom:24px; }
+  .contact-row{ display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px solid var(--border); }
+  .contact-row:first-of-type{ border-top:none; }
+  .contact-row svg{ width:18px; height:18px; stroke:var(--blue-soft); fill:none; flex-shrink:0;}
+  .contact-row a, .contact-row span{ font-size:13.5px; color:var(--text-muted); }
+  .contact-row a:hover{ color:var(--text); }
+
+  form.form-card{ padding:36px; display:flex; flex-direction:column; gap:16px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field label{ font-size:12px; color:var(--text-faint); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.5px;}
+  .field input, .field textarea{
+    background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:12px 14px; color:var(--text); font-family:var(--font-body); font-size:14px; resize:vertical;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--blue-soft); background:rgba(255,255,255,0.05); }
+  .field input:focus-visible, .field textarea:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--blue-soft); outline-offset:2px;
+  }
+  .form-note{ font-size:12px; color:var(--text-faint); }
+
+  footer{ border-top:1px solid var(--border); padding:36px 0; }
+  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-inner p{ font-size:12.5px; color:var(--text-faint); }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .hero{ grid-template-columns:1fr; padding-top:190px; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo{ position:static; max-width:220px; margin:0 auto 8px; }
+    .cred-grid, .contact-grid{ grid-template-columns:1fr; }
+    .exp-grid{ grid-template-columns:repeat(2,1fr); }
+    .award-strip{ grid-template-columns:repeat(2,1fr); }
+    nav.links{ display:none; }
+    .stat-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 600px){
+    .wrap{ padding:0 20px; }
+    section{ padding:80px 0; }
+    .hero{ padding-top:172px; padding-bottom:80px; }
+    .exp-grid{ grid-template-columns:1fr 1fr; }
+    .tl-list{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .nav-cta .btn span.full{ display:none; }
+    .hero-cta{ flex-direction:column; align-items:stretch; }
+    .philosophy{ padding:44px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark">SM</div>
+      <div class="brand-name">Sumra Latif Mughal<span>Treasury &amp; Digital Banking</span></div>
+    </div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="http://www.linkedin.com/in/sumra-latif-mughal-8263a318" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-primary" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="item">KIBOR&nbsp;6M <b>11.42%</b> <span class="up">▲0.06</span></span>
+    <span class="item">PKR/USD <b>278.65</b> <span class="down">▼0.12</span></span>
+    <span class="item">SBP Policy Rate <b>11.00%</b></span>
+    <span class="item">10Y PIB Yield <b>12.85%</b> <span class="up">▲0.03</span></span>
+    <span class="item">LCR <b>187%</b></span>
+    <span class="item">NSFR <b>142%</b></span>
+    <span class="item">Overnight Repo <b>10.95%</b></span>
+    <span class="item">KIBOR&nbsp;6M <b>11.42%</b> <span class="up">▲0.06</span></span>
+    <span class="item">PKR/USD <b>278.65</b> <span class="down">▼0.12</span></span>
+    <span class="item">SBP Policy Rate <b>11.00%</b></span>
+    <span class="item">10Y PIB Yield <b>12.85%</b> <span class="up">▲0.03</span></span>
+    <span class="item">LCR <b>187%</b></span>
+    <span class="item">NSFR <b>142%</b></span>
+    <span class="item">Overnight Repo <b>10.95%</b></span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div>
+      <span class="eyebrow">Treasury Front Office Lead · HugoBank</span>
+      <h1 class="headline">Treasury leadership driving the <span class="grad">future of digital banking</span></h1>
+      <p class="sub">Experienced treasury and corporate finance professional specializing in liquidity management, financial markets, treasury transformation, and digital banking innovation.</p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn btn-primary">View Experience</a>
+        <a href="http://www.linkedin.com/in/sumra-latif-mughal-8263a318" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><b>12+</b><span>Years in Banking</span></div>
+        <div class="hstat"><b>4</b><span>Financial Institutions</span></div>
+        <div class="hstat"><b>6</b><span>Leadership Roles</span></div>
+      </div>
+    </div>
+
+    <div class="dash glass reveal">
+      <div class="dash-head">
+        <span class="dash-title">Treasury Console</span>
+        <div class="dash-dot"><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="gauge-row">
+        <div class="gauge-card">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="margin:0 auto;">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6"/>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"
+              stroke-dasharray="163.4" stroke-dashoffset="20" transform="rotate(-90 32 32)"/>
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3e7bfa"/><stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient></defs>
+          </svg>
+          <div class="glabel">LCR</div>
+          <div class="gval">187%</div>
+        </div>
+        <div class="gauge-card">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="margin:0 auto;">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6"/>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="url(#g2)" stroke-width="6" stroke-linecap="round"
+              stroke-dasharray="163.4" stroke-dashoffset="45" transform="rotate(-90 32 32)"/>
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3e7bfa"/>
+            </linearGradient></defs>
+          </svg>
+          <div class="glabel">NSFR</div>
+          <div class="gval">142%</div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="clabel"><span>Balance Sheet Growth</span><span class="cval">+18.4%</span></div>
+        <svg viewBox="0 0 260 70" width="100%" height="70" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.45"/>
+              <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,55 L30,48 L60,50 L90,36 L120,40 L150,26 L180,30 L210,14 L240,18 L260,6 L260,70 L0,70 Z" fill="url(#area)"/>
+          <path d="M0,55 L30,48 L60,50 L90,36 L120,40 L150,26 L180,30 L210,14 L240,18 L260,6" fill="none" stroke="#6d97ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="note-illustrative">Illustrative treasury dashboard — figures for design purposes</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Profile</span>
+      <h2 class="section-title">A treasury leader shaping Pakistan's digital banking frontier</h2>
+      <p class="section-desc">Twelve-plus years spent moving between money markets, corporate finance, and treasury front-office leadership — building the financial infrastructure that lets digital banks scale responsibly.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="photo-frame glass">
+          <img src="data:image/jpeg;base64,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" alt="Portrait of Sumra Latif Mughal">
+        </div>
+        <div class="photo-caption">
+          <b>Sumra Latif Mughal</b>
+          <span>Treasury Front Office Lead</span>
+        </div>
+      </div>
+
+      <div class="about-copy reveal">
+        <p>Sumra Latif Mughal is a seasoned treasury and banking professional with over <strong>12 years of experience</strong> across treasury management, liquidity optimization, corporate finance, financial markets, and digital banking. Throughout her career, she has contributed to the growth and transformation of leading financial institutions by delivering strategic treasury solutions, strengthening financial governance, and driving operational excellence.</p>
+        <p>Currently serving as <strong>Treasury Front Office Lead at HugoBank</strong>, she is responsible for establishing and leading treasury front-office functions for one of Pakistan's emerging digital banking platforms — spanning liquidity management, balance sheet optimization, funding strategy, money markets, investment management, and treasury risk oversight.</p>
+        <p>Her professional journey spans <strong>HugoBank, Telenor Microfinance Bank, ICBC Pakistan,</strong> and <strong>Sindh Bank</strong>, where she built deep expertise in treasury operations, foreign exchange, money markets, regulatory compliance, and corporate finance.</p>
+        <div class="company-strip">
+          <span class="company-chip">HugoBank</span>
+          <span class="company-chip">Telenor Microfinance Bank</span>
+          <span class="company-chip">ICBC Pakistan</span>
+          <span class="company-chip">Sindh Bank</span>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          <b>12+ Years Experience</b>
+          <p>Across treasury, markets, and corporate finance</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6"/></svg>
+          <b>Treasury Leadership</b>
+          <p>Front-office strategy &amp; execution</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19h16M6 15l4-5 3 3 5-7"/></svg>
+          <b>Digital Banking Transformation</b>
+          <p>Building modern treasury infrastructure</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <b>Corporate Finance</b>
+          <p>Capital planning &amp; financial strategy</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 3v18h18M7 15l4-5 3 3 5-6"/></svg>
+          <b>Financial Markets</b>
+          <p>Money markets, FX &amp; fixed income</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          <b>Fintech Innovation</b>
+          <p>Treasury technology &amp; automation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Career Trajectory</span>
+      <h2 class="section-title">Twelve years, four institutions, one rising curve</h2>
+      <p class="section-desc">From treasury back-office operations to leading front-office strategy for a digital bank — each role adding scope, seniority, and market depth.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass">
+          <div class="tl-top">
+            <div><div class="tl-role">Assistant Manager, Treasury Operations</div><div class="tl-org">Sindh Bank Limited</div></div>
+            <div class="tl-dates">Apr 2013 – Jul 2015</div>
+          </div>
+          <p class="tl-body">Managed treasury operational activities including transaction processing, settlements, compliance monitoring, liquidity reporting, and financial controls.</p>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:22%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass">
+          <div class="tl-top">
+            <div><div class="tl-role">Treasury Back Office</div><div class="tl-org">Industrial &amp; Commercial Bank of China (ICBC) Pakistan</div></div>
+            <div class="tl-dates">Jul 2015 – Sep 2016</div>
+          </div>
+          <p class="tl-body">Oversaw treasury settlements, confirmations, reconciliations, documentation, and operational controls to ensure accurate transaction processing.</p>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:34%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass">
+          <div class="tl-top">
+            <div><div class="tl-role">Assistant Dealer – Treasury &amp; Financial Institutions</div><div class="tl-org">ICBC Pakistan</div></div>
+            <div class="tl-dates">Oct 2016 – Jun 2021</div>
+          </div>
+          <p class="tl-body">Managed money market and foreign exchange operations while supporting liquidity management and treasury execution activities.</p>
+          <ul class="tl-list">
+            <li>Interbank money market transactions</li>
+            <li>Foreign exchange dealing &amp; settlement</li>
+            <li>Treasury reporting &amp; analysis</li>
+            <li>Liquidity monitoring &amp; investment support</li>
+          </ul>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:52%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass">
+          <div class="tl-top">
+            <div><div class="tl-role">Executive Manager, Treasury</div><div class="tl-org">Telenor Microfinance Bank</div></div>
+            <div class="tl-dates">Jul 2021 – Apr 2022</div>
+          </div>
+          <p class="tl-body">Managed daily treasury operations, cash management, investments, and financial market activities while ensuring compliance with internal policies and regulatory requirements.</p>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:66%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass">
+          <div class="tl-top">
+            <div><div class="tl-role">Assistant Director, Treasury &amp; Corporate Finance</div><div class="tl-org">Telenor Microfinance Bank</div></div>
+            <div class="tl-dates">Apr 2022 – Nov 2024</div>
+          </div>
+          <p class="tl-body">Led treasury and corporate finance activities supporting one of Pakistan's leading digital financial institutions.</p>
+          <ul class="tl-list">
+            <li>Liquidity positions &amp; funding strategies</li>
+            <li>Treasury transactions &amp; investments</li>
+            <li>Regulatory &amp; management reporting</li>
+            <li>Treasury automation &amp; capital planning</li>
+          </ul>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:82%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item current reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card glass" style="border-color:rgba(139,92,246,0.4);">
+          <div class="tl-top">
+            <div><div class="tl-role">Treasury Front Office Lead</div><div class="tl-org">HugoBank</div></div>
+            <div class="tl-dates">Nov 2024 – Present</div>
+          </div>
+          <p class="tl-body">Leading the design, implementation, and execution of treasury front-office functions within Pakistan's digital banking sector — establishing modern treasury infrastructure for scalable digital banking operations.</p>
+          <ul class="tl-list">
+            <li>Treasury strategy &amp; balance sheet optimization</li>
+            <li>Liquidity &amp; funding management</li>
+            <li>Money market &amp; investment execution</li>
+            <li>Governance, controls &amp; regulatory compliance</li>
+          </ul>
+          <div class="seniority"><span class="seniority-label">Seniority</span><div class="seniority-track"><div class="seniority-fill" style="width:100%"></div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Capabilities</span>
+      <h2 class="section-title">Where treasury depth meets digital banking scope</h2>
+      <p class="section-desc">A full-stack treasury skill set — from balance sheet mechanics to the fintech systems that run on top of it.</p>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Treasury</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V9l6-4 6 4v12"/></svg></div>
+        <h3>Treasury Management</h3><p>End-to-end front-office treasury strategy &amp; execution</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Treasury</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"/></svg></div>
+        <h3>Liquidity &amp; Cash Management</h3><p>Optimizing daily cash and funding positions</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Treasury</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M3 12h6l3-9 3 18 3-9h6"/></svg></div>
+        <h3>Asset Liability Management</h3><p>Balancing maturity, rate &amp; liquidity risk</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Finance</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Corporate Finance</h3><p>Capital planning &amp; financial strategy</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Markets</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 15l4-5 3 3 5-7"/></svg></div>
+        <h3>Money Markets</h3><p>Interbank &amp; short-term instrument execution</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Markets</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg></div>
+        <h3>Foreign Exchange</h3><p>FX dealing, settlement &amp; risk positioning</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Digital</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></div>
+        <h3>Digital Banking</h3><p>Treasury infrastructure for digital-first banks</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Digital</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+        <h3>Fintech Innovation</h3><p>Process automation &amp; financial inclusion</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Governance</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z"/></svg></div>
+        <h3>Regulatory Compliance</h3><p>Basel III liquidity &amp; regulatory reporting</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Governance</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></div>
+        <h3>Risk Management</h3><p>Treasury risk oversight &amp; controls</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Strategy</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l3-4 3 2 5-7"/></svg></div>
+        <h3>Financial Strategy</h3><p>Profitability enhancement &amp; forecasting</p>
+      </div>
+      <div class="exp-card glass reveal">
+        <span class="exp-tag">Technology</span>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Treasury Technology</h3><p>Implementation &amp; process transformation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Credentials</span>
+      <h2 class="section-title">Certifications &amp; education</h2>
+      <p class="section-desc">Formal training in treasury mechanics, monetary policy, and leadership — building on a strong academic foundation.</p>
+    </div>
+
+    <div class="cred-grid">
+      <div class="cred-list">
+        <div class="cred-card glass reveal">
+          <div class="cred-badge"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1 3-6Z"/></svg></div>
+          <div><h4>10x1000 Tech for Inclusion — Fintech Foundation Program</h4><p>Fintech &amp; financial inclusion training</p></div>
+        </div>
+        <div class="cred-card glass reveal">
+          <div class="cred-badge"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V9l6-4 6 4v12"/></svg></div>
+          <div><h4>Treasury Concepts and Calculations</h4><p>Core treasury mathematics &amp; products</p></div>
+        </div>
+        <div class="cred-card glass reveal">
+          <div class="cred-badge"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z"/></svg></div>
+          <div><h4>Basel III Liquidity Standards (LCR &amp; NSFR)</h4><p>Regulatory liquidity framework</p></div>
+        </div>
+        <div class="cred-card glass reveal">
+          <div class="cred-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div>
+          <div><h4>EMPOWER Executive Development Programme</h4><p>Women's leadership development</p></div>
+        </div>
+        <div class="cred-card glass reveal">
+          <div class="cred-badge"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 15l4-5 3 3 5-7"/></svg></div>
+          <div><h4>Navigating the Effects of Monetary Policy on Economic Variables</h4><p>Macro &amp; monetary policy analysis</p></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="edu-card glass reveal">
+          <div class="edu-degree">MS, Management Sciences</div>
+          <div class="edu-school">Shaheed Zulfikar Ali Bhutto Institute of Science &amp; Technology (SZABIST)</div>
+        </div>
+        <div class="edu-card glass reveal">
+          <div class="edu-degree">MBA, Finance</div>
+          <div class="edu-school">Bahria University</div>
+          <div class="edu-focus">Finance, Economics, Investment &amp; Banking</div>
+        </div>
+        <div class="edu-card glass reveal">
+          <div class="edu-degree">Bachelor's Degree, Business &amp; Commerce</div>
+          <div class="edu-school">University of Karachi</div>
+        </div>
+        <div class="edu-card glass reveal">
+          <div class="edu-degree">Executive Leadership Program</div>
+          <div class="edu-school">Lahore University of Management Sciences (LUMS)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Recognition</span>
+      <h2 class="section-title">Awards &amp; recognition</h2>
+    </div>
+    <div class="award-strip">
+      <div class="award-card glass reveal">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg>
+        <h4>Gold Medalist</h4><p>Academic distinction</p>
+      </div>
+      <div class="award-card glass reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 3l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1 3-6Z"/></svg>
+        <h4>Magna Cum Laude</h4><p>Graduate honors</p>
+      </div>
+      <div class="award-card glass reveal">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <h4>Fintech Certified Professional</h4><p>Fintech foundation credential</p>
+      </div>
+      <div class="award-card glass reveal">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V9l6-4 6 4v12"/></svg>
+        <h4>Banking &amp; Treasury Industry Leader</h4><p>Sector recognition</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy">
+    <div class="philosophy glass reveal">
+      <blockquote>Treasury is not simply about managing funds; it is about creating financial resilience, enabling growth, and supporting innovation. Through disciplined financial management and technology-driven solutions, sustainable value can be created for institutions, customers, and communities alike.</blockquote>
+      <cite>— Sumra Latif Mughal</cite>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Get in touch</span>
+      <h2 class="section-title">Let's talk treasury, digital banking, or fintech</h2>
+      <p class="section-desc">Open to conversations on treasury leadership, financial markets strategy, and digital banking transformation.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card glass reveal">
+        <h3>Sumra Latif Mughal</h3>
+        <p>Treasury Front Office Lead, HugoBank</p>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>Available via LinkedIn message</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+          <a href="http://www.linkedin.com/in/sumra-latif-mughal-8263a318" target="_blank" rel="noopener">linkedin.com/in/sumra-latif-mughal-8263a318</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Based in Pakistan</span>
+        </div>
+      </div>
+
+      <form class="form-card glass reveal" onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Message captured locally — connect on LinkedIn to follow up.';">
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your full name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@company.com" required></div>
+        </div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" type="text" placeholder="Treasury partnership, speaking, advisory..."></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" rows="4" placeholder="Tell me a little about what you'd like to discuss"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+        <p class="form-note">This form is for demonstration — please use LinkedIn for a direct response.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Sumra Latif Mughal · Treasury Leadership · Digital Banking · Fintech Innovation</p>
+    <p>Built for treasury &amp; digital banking leadership opportunities</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Smooth anchor offset for fixed header+ticker
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){
+        e.preventDefault();
+        const y = el.getBoundingClientRect().top + window.scrollY - 110;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
